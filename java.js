@@ -1,14 +1,16 @@
 const toggleDropdown = (dropdown) => {
-    dropdown.classList.toggle("yes-child");
+    dropdown.classList.toggle("visible");
 }
-
 document.addEventListener("DOMContentLoaded", function(){
-    const dropdowns = document.getElementsByClassName('dropdown');
-    for (let i=0; i<dropdowns.length; i++) {
-        const dropdown = dropdowns[i];
-        const trigger = dropdown.getElementsByClassName('dropdown-trigger')[0];
-        trigger.addEventListener('click', function () {
+    const dropdownTriggers = document.getElementsByClassName('dropdown-trigger');
+    for (let i=0; i<dropdownTriggers.length; i++) {
+        const dropdownTrigger = dropdownTriggers[i];
+        const target = dropdownTrigger.dataset.dropdownTarget;
+
+        const dropdown = document.getElementById(target)
+        dropdownTrigger.addEventListener('click', function () {
             toggleDropdown(dropdown);
+            dropdownTrigger.classList.toggle("active");
         });
     }
 });
