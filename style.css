@@ -34,21 +34,22 @@ body {
     height: auto;
     width: 100%;
 }
-.navTab {
+.first {
+    border-top: 2px solid rgb(75, 75, 75);
+}
+.navTab, .navSubTab {
     display: flex;
     align-items: center;
     height: 75px;
     padding-left: 20px;
+    border-bottom: 2px solid rgb(75, 75, 75);
+}
+.navSubTab {
+    padding-left: 30px;
 }
 .navTab:hover, .active {
     background-color: #0f741f;
     color: black;
-}
-.navSubTab {
-    display: flex;
-    align-items: center;
-    height: 75px;
-    padding-left: 20px; 
 }
 .navSubTab:hover {
     color:rgba(255, 255, 255, 0.616);
@@ -60,7 +61,6 @@ h1 {
 .dropdown {
     display: none;
 }
-
 .dropdown.visible {
     display: inline;
 }
