@@ -70,8 +70,10 @@ a:link, a:visited, a:hover, a:active {
 }
 .content {
     display: block;
+    position: fixed;
+    right: 0;
     height: 100%;
-    width: 100%;
+    width: calc(100% - 200px);
     background-image: url("./turtle.png");
     background-repeat: no-repeat;
     background-position: center;
