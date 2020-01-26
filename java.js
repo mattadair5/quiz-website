@@ -4,11 +4,16 @@ document.addEventListener("DOMContentLoaded", function(){
         const dropdownTrigger = dropdownTriggers[i];
         const target = dropdownTrigger.dataset.dropdownTarget;
         
-        const dropdown = document.getElementById(target);
+        const dropdowns = document.getElementsByClassName(target);
+        
+        for (let i=0; i<dropdowns.length; i++) {
 
-        dropdownTrigger.addEventListener('click', function () {
-            dropdown.classList.toggle("visible");
-            dropdownTrigger.classList.toggle("active");
-        });
+            const dropdown = dropdowns[i];
+            dropdownTrigger.addEventListener('click', function () {
+                dropdown.classList.toggle("visible");
+                dropdownTrigger.classList.toggle("active");
+            });
+        }
+
     }
 });

@@ -102,6 +102,9 @@ a:link, a:visited, a:hover, a:active {
     display: inline-flex;
     margin: 15 0 15 0;
 }
+#mobileNav, .mobileImg {
+    display: none;
+}
 
 @media only screen and (min-width: 1300px) {
     .quiz {
@@ -115,7 +118,7 @@ a:link, a:visited, a:hover, a:active {
         width: 33vw;
     }
 }
-@media only screen and (max-width: 709px) and (min-width: 500px){
+@media only screen and (min-width: 500px) and (max-width: 709px){
     .quiz {
         height: 60vw;
         width: 60vw;
@@ -125,6 +128,59 @@ a:link, a:visited, a:hover, a:active {
     .quiz {
         height: 70vw;
         width: 70vw;
+    }
+    .sideBar {
+        display: flexbox;
+        width: 100%;
+        background-color: transparent;
+    }
+    .sideBarImg {
+        display: none;
+    }
+    .bar {
+        display: none;
+    }
+    .content {
+        display: table-row;
+    }
+    .dropdownsmall {
+        display: list-item;       
+    }
+    .dropdownsmall.visible {
+        display: none;
+    }
+    .navTab {
+        background-color: rgb(49, 49, 49);
+    }
+    h1 {
+        display: flex;
+        text-align: center;
+        background-color: rgb(49, 49, 49);
+    }
+    .mobileImg {
+        display: flex;
+        height: 40px;
+        width: 40px;
+    }
+    .title {
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(49, 49, 49);
+        width: 100%;
+    }
+    .title h1 {
+        padding: 0 40;
+    }
+    .shownav {
+        background-color: rgb(49, 49, 49);
+    }
+    #mobileNav {
+        display: flex;
+        height: 20px;
+        justify-content: center;
+        padding: 0;
     }
 }
 .content::-webkit-scrollbar-track {

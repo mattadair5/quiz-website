@@ -3,28 +3,45 @@
         <title>Quiz Turtle</title>
         <link href="./style.css" rel="stylesheet" type="text/css">
         <script src="./java.js"></script>
+        <link rel="shortcut icon" href="./turtle.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 
     <body>
         <header class="sideBar">
             <img class="sideBarImg" src="./turtle.png"></div>
-            <h1>Quiz Turtle</h1>
+            <div class = "title">
+                <img class="mobileImg" src="./turtle.png">
+                <h1>Quiz Turtle</h1>
+                <img class="mobileImg" src="./turtle.png">
+            </div>
             <div class="bar"></div>
             <ul class="navBar">
-                <li><a class="navTab first" href="./index.html">HOME</a></li>
-                <li><a class="dropdown-trigger navTab" data-dropdown-target="categories">CATEGORIES</a>
-                    <ul id="categories" class="dropdown">
-                        <li class="navSubTab">Category 1</li>
-                        <li class="navSubTab">Category 2</li>
-                        <li class="navSubTab">Category 3</li>
+                <li class="dropdownsmall shownav"><a class="navTab first"  href="./index.html">HOME</a></li>
+                <li class="dropdownsmall shownav"><a class="dropdown-trigger navTab" data-dropdown-target="categories">CATEGORIES</a>
+                    <ul class="dropdown categories">
+                        <li class="navSubTab">CATEGORY 1</li>
+                        <li class="navSubTab">CATEGORY 2</li>
+                        <li class="navSubTab">CATEGORY 3</li>
                     </ul>
                 </li>
-                <li><a class="navTab">CREATE A QUIZ</a></li>
-                <li><a class="navTab">ABOUT</a></li>
+                <li class="dropdownsmall shownav"><a class="navTab">CREATE A QUIZ</a></li>
+                <li class="dropdownsmall shownav"><a class="navTab">ABOUT</a></li>
+                <li class="dropdown-trigger navTab" id="mobileNav" data-dropdown-target="shownav">↓</li>
             </ul>
         </header>
         <div class="content">
-
+            <div class="quizArea">
+                <div class="quiz"></div>
+                <div class="quiz"></div>
+                <div class="quiz"></div>
+                <div class="quiz"></div>
+                <div class="quiz"></div>
+                <div class="quiz"></div>
+                <div class="quiz"></div>
+                <div class="quiz"></div>
+                <div class="quiz"></div>
+            </div>
         </div>
     </body>
 </html>
