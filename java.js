@@ -14,6 +14,21 @@ document.addEventListener("DOMContentLoaded", function(){
                 dropdownTrigger.classList.toggle("active");
             });
         }
-
     }
+
+    const invisibleTrigger = document.getElementsByClassName('invisible-trigger')[0];
+
+    invisibleTrigger.addEventListener('click', function() {
+        const elements = document.querySelectorAll('.navBar li');
+        for (let i=0; i<elements.length; i++) { 
+    
+            elements[i].classList.add('visible');
+        }
+        const elements2 = document.querySelectorAll('.navbar .shownav ul');
+        for (let i=0; i<elements2.length; i++) { 
+    
+            elements2[i].classList.remove('visible');
+        }
+    })
+
 });
