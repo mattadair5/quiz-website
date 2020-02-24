@@ -1,0 +1,278 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+  font-size: 15px;
+  outline: none;
+}
+body {
+  background-color: rgb(100, 100, 100);
+}
+.sideBar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  background-color: rgb(49, 49, 49);
+  color: rgb(233, 233, 233);
+  align-items: center;
+  justify-content: start;
+  width: 200px;
+  height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 5;
+}
+.sideBarImg {
+  height: 60px;
+  margin: 20;
+}
+.sideBarImg:hover {
+  transform: rotate(180deg);
+}
+.navBar {
+  display: inline-flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+}
+.first {
+  border-top: 2px solid rgb(75, 75, 75);
+}
+.navTab,
+.navSubTab {
+  display: flex;
+  align-items: center;
+  height: 75px;
+  padding-left: 20px;
+  border-bottom: 2px solid rgb(75, 75, 75);
+}
+.navSubTab {
+  padding-left: 30px;
+}
+.navTab:hover,
+.active {
+  background-color: #0f741f;
+  color: black;
+}
+.navSubTab:hover {
+  color: rgba(255, 255, 255, 0.616);
+}
+h1 {
+  padding: 10 0 5 0;
+  font-size: 25px;
+}
+
+.dropdown {
+  display: none;
+}
+.dropdown.visible {
+  display: inline;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: rgb(233, 233, 233);
+}
+.content {
+  display: block;
+  right: 0;
+  height: 100%;
+  width: calc(100% - 200px);
+  background-image: url("./turtle.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 100%;
+  z-index: 1;
+  overflow-y: scroll;
+  margin-left: 200px;
+}
+.bar {
+  width: calc(100% - 20%);
+  height: 5px;
+  background-color: #0f741f;
+  margin-bottom: 40px;
+}
+.quizArea {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.quiz {
+  height: 25vw;
+  width: 25vw;
+  background-color: rgb(75, 75, 75);
+  border: 4px black solid;
+  display: inline-flex;
+  margin: 15 0 15 0;
+}
+.quizTitle {
+  width: 100%;
+  height: 25%;
+  background-color: #0f741f;
+  border: 2px solid darkgreen;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 80px;
+}
+#mobileNav,
+.mobileImg {
+  display: none;
+}
+
+@media only screen and (min-width: 1300px) {
+  .quiz {
+    height: 25vw;
+    width: 25vw;
+  }
+}
+@media only screen and (min-width: 710px) and (max-width: 1299px) {
+  .quiz {
+    height: 33vw;
+    width: 33vw;
+  }
+}
+@media only screen and (min-width: 500px) and (max-width: 709px) {
+  .quiz {
+    height: 60vw;
+    width: 60vw;
+  }
+}
+@media only screen and (max-width: 499px) {
+  .quiz {
+    height: 70vw;
+    width: 70vw;
+  }
+  .sideBar {
+    display: flex;
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    margin-top: -60px;
+  }
+  .sideBarImg {
+    display: none;
+  }
+  .bar {
+    display: none;
+  }
+  .content {
+    display: flex;
+    margin: 0;
+    margin-top: 60px;
+    /* ^^ This is where the issue is... */
+    width: 100%;
+  }
+  .dropdownsmall {
+    display: list-item;
+  }
+  .dropdownsmall.visible {
+    display: none;
+  }
+  .navTab {
+    background-color: rgb(49, 49, 49);
+  }
+  h1 {
+    display: flex;
+    text-align: center;
+    background-color: rgb(49, 49, 49);
+  }
+  .mobileImg {
+    display: flex;
+    height: 40px;
+    width: 40px;
+  }
+  .title {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(49, 49, 49);
+    width: 100%;
+  }
+  .title h1 {
+    padding: 0 40;
+  }
+  .shownav {
+    background-color: rgb(49, 49, 49);
+  }
+  #mobileNav {
+    display: flex;
+    height: 20px;
+    justify-content: center;
+    padding: 0;
+  }
+}
+.content::-webkit-scrollbar-track {
+  border: 4px solid rgb(0, 0, 0);
+  padding: 2px 0;
+  background-color: rgb(0, 0, 0);
+}
+.content::-webkit-scrollbar {
+  width: 20px;
+}
+.content::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #0f741f;
+  border: 1px solid #0f742073;
+}
+button {
+  width: 100%;
+  background-color: rgb(49, 49, 49);
+  color: white;
+  border: 2px solid rgb(75, 75, 75);
+}
+
+/* Modal Login/Register*/
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.5); 
+}
+
+.modalLogin-content {
+  background-color: rgb(100, 100, 100);
+  margin: 15% auto; 
+  padding: 20px;
+  border: 4px solid #aaa;
+  width: 20%;
+  height: 33%;
+
+}
+.modalLogin-content input, .modalLogin-content button {
+  width: 85%;
+  height: 45px;
+  margin: 20px;
+}
+.modalLogin-content div, .modalLogin-content a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#registerForm {
+  display: none;
+}
+#loginForm {
+  display: flex;
+}
+.loginError, .registerError {
+  padding-bottom: 5px;
+  color: rgb(238, 40, 40);
+  font-weight: 600;
+}
