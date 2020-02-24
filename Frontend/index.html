@@ -2,6 +2,7 @@
     <head>
         <title>Quiz Turtle</title>
         <link href="./style.css" rel="stylesheet" type="text/css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
         <script src="./java.js"></script>
         <link rel="shortcut icon" href="./turtle.ico">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +18,8 @@
             </div>
             <div class="bar"></div>
             <ul class="navBar">
-                <li class="dropdownsmall shownav"><a class="navTab first">HOME</a></li>
+                <li class="dropdownsmall shownav"><button id="login" class="navTab first">LOGIN</button></li>
+                <li class="dropdownsmall shownav"><a class="navTab">HOME</a></li>
                 <li class="dropdownsmall shownav"><a class="dropdown-trigger navTab" data-dropdown-target="categories">CATEGORIES</a>
                     <ul class="dropdown categories">
                         <li class="navSubTab">CATEGORY 1</li>
@@ -30,6 +32,25 @@
                 <li class="dropdown-trigger navTab" id="mobileNav" data-dropdown-target="shownav">↓</li>
             </ul>
         </header>
+        <div id="modalLogin" class="modal">
+            <div class="modalLogin-content">
+                <div id="loginForm">
+                    <input class="user" type="text" username="username" placeholder="Enter Username"> 
+                    <input class="pass" type="text" password="password" placeholder="Enter Password"> 
+                    <button type="submit">Login</button>
+                    <p class="loginError"></p>
+                </div>
+                <div id="registerForm">
+                    <input class="user" type="text" username="username" placeholder="Enter Username"> 
+                    <input class="pass" type="text" password="password" placeholder="Enter Password"> 
+                    <button type="submit">Register</button>
+                    <p class="registerError"></p>
+                </div>
+                <a id="switchForm" href="#">
+                <p>Not registered? Create an account.</p></a>
+            </div>
+        </div>
+
         <div class="content invisible-trigger">
             <div class="quizArea">
                 <div class="quiz">
